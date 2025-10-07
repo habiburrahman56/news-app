@@ -64,17 +64,17 @@ const NewsList: React.FC<Props> = ({ articles }) => {
                 {article.title || "Untitled"}
               </h2>
 
-              {article.source?.name && (
-                <p className="text-xs text-gray-500 mt-1 italic">
-                  News Source:{" "}
-                  <span className="font-medium">{article.source.name}</span>
-                </p>
-              )}
-
               <p className="text-sm mt-2 line-clamp-4 text-gray-600">
                 {article.description || "No description available."}
               </p>
             </div>
+
+            {article.source?.name && (
+              <p className="text-xs text-gray-500 mt-1 italic">
+                News Source:{" "}
+                <span className="font-medium">{article.source.name}</span>
+              </p>
+            )}
 
             <a
               href={article.url || "#"}
