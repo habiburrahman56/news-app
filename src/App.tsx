@@ -6,7 +6,7 @@ function App() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("bitcoin"); 
+  const [searchTerm, setSearchTerm] = useState("bitcoin");
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -69,28 +69,26 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-14">
-<div className="flex flex-row justify-between items-center mb-10 w-full max-w-[80%] mx-auto gap-4 px-4">
+      <div className="flex flex-row justify-between items-center mb-10 w-full max-w-[80%] mx-auto gap-4 px-4">
+        <h1 className="text-3xl font-bold text-black capitalize w-[30%]">
+          Latest News
+        </h1>
 
-  <h1 className="text-3xl font-bold text-black capitalize w-[30%]">
-    Latest News
-  </h1>
-
-  <form onSubmit={handleSearch} className="flex w-[30%]">
-    <input
-      type="text"
-      name="search"
-      placeholder="Search news..."
-      className="flex-1 px-4 py-2 border border-gray-400 rounded-l-lg focus:outline-none"
-    />
-    <button
-      type="submit"
-      className="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition"
-    >
-      Search
-    </button>
-  </form>
-</div>
-
+        <form onSubmit={handleSearch} className="flex w-[30%]">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search news..."
+            className="flex-1 px-4 py-2 border border-gray-400 rounded-l-lg focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition"
+          >
+            Search
+          </button>
+        </form>
+      </div>
 
       <NewsList articles={articles.slice(0, visibleCount)} />
 
